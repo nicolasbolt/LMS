@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "person_courses",
+  "info": {
+    "singularName": "person-course",
+    "pluralName": "person-courses",
+    "displayName": "Person Course",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "completed": {
+      "type": "boolean"
+    },
+    "course": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::course.course"
+    },
+    "completed_course_items": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::course-item.course-item"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    }
+  }
+}

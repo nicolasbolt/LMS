@@ -28,12 +28,12 @@ export default function Layout({ children }) {
                     </Link>
                 </div>
                 <div>
-                    <Link href="#">
+                    <Link href="/account/login">
                         <a className="block mt-4 inline-block mt-0 text-sky-200 text-lg hover:text-white mr-4">
-                            Sign In
+                            Log In
                         </a>
                     </Link>
-                    <Link href="#">
+                    <Link href="/account/register">
                         <a className="block mt-4 inline-block mt-0 text-sky-200 text-lg hover:text-white mr-4">
                             Register
                         </a>
