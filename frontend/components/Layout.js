@@ -1,7 +1,10 @@
+import AuthContext from '@/context/AuthenticationContext'
 import Link from 'next/link'
-import React from 'react'
+import { useContext } from 'react'
 
 export default function Layout({ children }) {
+  const { user, logout } = useContext(AuthContext)
+
   return (
     <div>
         <nav className="flex items-center justify-between flex-wrap bg-sky-600 p-6">
@@ -28,16 +31,28 @@ export default function Layout({ children }) {
                     </Link>
                 </div>
                 <div>
-                    <Link href="/account/login">
-                        <a className="block mt-4 inline-block mt-0 text-sky-200 text-lg hover:text-white mr-4">
-                            Log In
-                        </a>
-                    </Link>
-                    <Link href="/account/register">
-                        <a className="block mt-4 inline-block mt-0 text-sky-200 text-lg hover:text-white mr-4">
-                            Register
-                        </a>
-                    </Link>
+                    {!user ? (
+                        <>
+                            <Link href="/account/login">
+                                <a className="block mt-4 inline-block mt-0 text-sky-200 text-lg hover:text-white mr-4">
+                                    Log In
+                                </a>
+                            </Link>
+                            <Link href="/account/register">
+                                <a className="block mt-4 inline-block mt-0 text-sky-200 text-lg hover:text-white mr-4">
+                                    Register
+                                </a>
+                            </Link>
+                        </>
+                    ) :  (
+                        <>
+                            <div onClick={() => logout()}>
+                                <a className="block mt-4 inline-block mt-0 text-sky-200 text-lg hover:text-white mr-4 cursor-pointer">
+                                    Log Out
+                                </a>
+                            </div>
+                        </>
+                    )}
                 </div>
             </div>
         </nav>

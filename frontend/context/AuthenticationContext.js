@@ -10,7 +10,9 @@ export const AuthProvider = ({children}) => {
 
     const router = useRouter()
 
-    useEffect(() => checkUserLoggedIn(), [])
+    useEffect(() => {
+      checkUserLoggedIn()
+    }, [])
 
     const register = async (user, next) => {
         const res = await fetch(`${NEXT_PUBLIC_FRONTEND_URL}/api/register`, {

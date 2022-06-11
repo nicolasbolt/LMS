@@ -7,6 +7,7 @@ export default function About() {
     <Layout>
         <div className='m-5'>
             <H1>About</H1>
+            <p>Todo</p>
         </div>
     </Layout>
   )

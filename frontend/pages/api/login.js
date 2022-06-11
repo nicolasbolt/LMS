@@ -5,7 +5,7 @@ const login = async (req, res) => {
     if (req.method === 'POST') {
       const { identifier, password } = req.body
   
-      const strapiRes = await fetch(`${NEXT_PUBLIC_API_URL}/auth/local`, {
+      const strapiRes = await fetch(`${NEXT_PUBLIC_API_URL}/api/auth/local`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -30,6 +30,7 @@ const login = async (req, res) => {
 
         res.status(200).json({ user: data.user })
       } else {
+        console.error(data)
         res
           .status(data.statusCode)
           .json({ message: data.message[0].messages[0].message })

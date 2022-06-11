@@ -3,9 +3,11 @@ import { NEXT_PUBLIC_API_URL } from '@/utils/constants'
 
 const register = async (req, res) => {
     if (req.method === 'POST') {
-      const { username, email, password, newsletter } = req.body
+      const { firstName, lastName, username, email, password } = req.body
+
+      console.log(username, email, password)
   
-      const strapiRes = await fetch(`${NEXT_PUBLIC_API_URL}/auth/local/register`, {
+      const strapiRes = await fetch(`${NEXT_PUBLIC_API_URL}/api/auth/local/register`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -14,7 +16,8 @@ const register = async (req, res) => {
           username,
           email,
           password,
-          newsletter
+          // first_name: firstName,
+          // last_name: lastName
         }),
       })
   
