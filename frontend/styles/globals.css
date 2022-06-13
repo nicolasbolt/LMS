@@ -2,6 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+h1 {
+  font-size: 1.5rem;
+  margin: 15px 0
+}
+
+h3 {
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+pre {
+  margin: 10px 0; 
+  background-color: #eee;
+  border-radius: 3px;
+  padding: 10px;
+}
+
 html,
 body {
   padding: 0;

@@ -7,8 +7,8 @@ export default function Layout({ children }) {
 
   return (
     <div>
-        <nav className="flex items-center justify-between flex-wrap bg-sky-600 p-6">
-            <div className="flex items-center flex-shrink-0 text-white mr-6">
+        <nav className="flex items-center justify-between flex-wrap bg-slate-100 p-6">
+            <div className="flex items-center flex-shrink-0 text-slate-900 mr-6">
                 <Link href="/">
                     <a className="font-semibold text-xl tracking-tight">
                         LMS
@@ -18,13 +18,13 @@ export default function Layout({ children }) {
             <div className="w-full block flex-grow flex items-center w-auto">
                 <div className="text-sm flex-grow">
                     <Link href="/about">
-                        <a className="block mt-4 inline-block mt-0 text-sky-200 text-lg hover:text-white mr-4">
+                        <a className="block mt-4 inline-block mt-0 text-slate-900 text-lg hover:text-slate-500 mr-4 transition">
                             About
                         </a>
                         
                     </Link>
                     <Link href="/courses">
-                        <a className="block mt-4 inline-block mt-0 text-sky-200 text-lg hover:text-white mr-4">
+                        <a className="block mt-4 inline-block mt-0 text-slate-900 text-lg hover:text-slate-500 mr-4 transition">
                             Courses
                         </a>
                         
@@ -34,12 +34,12 @@ export default function Layout({ children }) {
                     {!user ? (
                         <>
                             <Link href="/account/login">
-                                <a className="block mt-4 inline-block mt-0 text-sky-200 text-lg hover:text-white mr-4">
+                                <a className="block mt-4 inline-block mt-0 text-slate-900 text-lg hover:text-slate-500 mr-4 transition">
                                     Log In
                                 </a>
                             </Link>
                             <Link href="/account/register">
-                                <a className="block mt-4 inline-block mt-0 text-sky-200 text-lg hover:text-white mr-4">
+                                <a className="block mt-4 inline-block mt-0 text-slate-900 text-lg hover:text-slate-500 mr-4 transition">
                                     Register
                                 </a>
                             </Link>
@@ -47,7 +47,7 @@ export default function Layout({ children }) {
                     ) :  (
                         <>
                             <div onClick={() => logout()}>
-                                <a className="block mt-4 inline-block mt-0 text-sky-200 text-lg hover:text-white mr-4 cursor-pointer">
+                                <a className="block mt-4 inline-block mt-0 text-slate-900 text-lg hover:text-slate-500 mr-4 transition cursor-pointer">
                                     Log Out
                                 </a>
                             </div>
